@@ -1,0 +1,53 @@
+<html>
+<head>
+<title> Validation </title>
+<script>
+  function check()
+	{
+		
+	var name=document.getElementById("name").value;
+	var regex_name=/[a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z]+$/;
+	
+	if(regex_name.test(name)==false)
+	{
+		alert("invalid name");	
+	}
+	
+	var password=document.getElementById("password").value;
+	var regex_name=/\w\w\w\w\w\w+$/g;
+	if(regex_name.test(password)==false)
+	{
+		alert("invalid password");	
+	}
+	var email=document.getElementById("email").value;
+	var regex_name=/\w+@([a-zA-Z]+).(com|in|org)$/g;
+	if(regex_name.test(email)==false)
+	{
+		alert("invalid email");	
+	}
+	var phone_number=document.getElementById("ph_number").value;
+	var regex_name=/\d{10}$/g;
+	if(regex_name.test(phone_number)==false)
+	{
+		alert("invalid phone number");	
+	}
+}
+
+</script>
+</head>
+<body>
+<h2>  Registration form </h2>
+<form onSubmit="return check(this)">
+Name:
+<input type="text" id="name"/><br><br>
+password:
+<input type="password" id="password"> <br><br>
+email:
+<input type="text" id="email"/><br><br>
+phone_number:
+<input type="text" id="ph_number"/><br><br>
+<input type="submit" value="submit">
+<input type="reset" value= "reset">
+</form>
+</body>
+</html>
